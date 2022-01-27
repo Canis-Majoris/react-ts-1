@@ -1,0 +1,17 @@
+@import "@Styles/variables/index.less";
+
+.action-inline-menu {
+  &-item {
+    display: flex;
+    align-items: center;
+    &[aria-disabled="true"] {
+      opacity: 0.5;
+    }
+    .ant-typography {
+      margin-left: 0;
+    }
+    svg {
+      font-size: @font-size-lg - 1;
+    }
+  }
+}

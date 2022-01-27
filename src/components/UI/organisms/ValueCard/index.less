@@ -1,0 +1,52 @@
+@import '@Styles/variables/index.less';
+
+@card-prefix-cls: ~'@{ant-prefix}-card';
+
+.value-card {
+  text-align: center;
+  .@{card-prefix-cls} {
+    min-height: @dashboard-card-height-sm;
+    &-head {
+      padding: @padding-sm + 2 !important;
+      min-height: 0 !important;
+    }
+    &-body {
+      width: 100%;
+      padding: (@padding-lg + 6) @padding-md;
+    }
+  }
+  &-value {
+    display: block;
+    font-weight: @font-weight-lg !important;
+    margin-bottom: @padding-md !important;
+  }
+  &-subtitle {
+    display: block !important;
+    font-size: @font-size-base;
+    color: @text-color-secondary-dark !important;
+  }
+  &.horizontal {
+    &.@{card-prefix-cls} {
+      min-height: 0;
+      max-height: @dashboard-card-height-sm - 30;
+      .ant-card-body {
+        width: 100%;
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: row-reverse !important;
+        align-items: center !important;
+      }
+    }
+    .value-card {
+      &-value {
+        width: 100%;
+        text-align: end;
+        margin-bottom: 0 !important;
+      }
+      &-subtitle {
+        width: 100%;
+        text-align: start;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@props: margin m, padding p; /* the property and abbreviation */
+@spacers: auto auto auto, none 0 0, xxs @padding-xs * 0.5 @padding-xs * 0.5,
+  xs @padding-xs @padding-xs, sm @padding-sm @padding-sm,
+  md @padding-md @padding-md, lg @padding-lg @padding-lg,
+  xl @padding-lg * 2 @padding-lg * 2; /* the sizes, its length-x and length-y */
+
+.loop-props(@prop-index) when (@prop-index > 0) {
+  /* outer each loop */
+
+  @prop: extract(
+    @props,
+    @prop-index
+  ); /* get each prop-abbrev pair based on loop index */
+  @prop-name: extract(
+    @prop,
+    1
+  ); /* the first value in each pair is the prop name */
+  @abbrev: extract(
+    @prop,
+    2
+  ); /* the second value in each pair is the prop's abbrev */
+
+  /* call size loop mixin with each property name + abbreviation */
+  .loop-sizes(@prop-name; @abbrev; length(@spacers));
+
+  .loop-props(@prop-index - 1); /* call the next iteration of the outer each loop */
+}
+.loop-props(length(@props));
+
+.loop-sizes(@prop-name; @abbrev; @size-index) when (@size-index > 0) {
+  /* inner each */
+
+  @spacer: extract(
+    @spacers,
+    @size-index
+  ); /* extract each spacer value based on index */
+  @size: extract(@spacer, 1); /* first value in each spacer is the size */
+  @x: extract(@spacer, 2); /* second value is the length in X axis */
+  @y: extract(@spacer, 3); /* third value is the length in Y axis */
+
+  /* create the selectors and properties using interpolation */
+  .@{abbrev}-@{size} {
+    @{prop-name}: @y @x;
+  }
+  .@{abbrev}t-@{size} {
+    @{prop-name}-top: @y;
+  }
+  .@{abbrev}r-@{size} {
+    @{prop-name}-right: @x;
+  }
+  .@{abbrev}b-@{size} {
+    @{prop-name}-bottom: @y;
+  }
+  .@{abbrev}l-@{size} {
+    @{prop-name}-left: @x;
+  }
+  .@{abbrev}x-@{size} {
+    @{prop-name}-right: @x;
+    @{prop-name}-left: @x;
+  }
+  .@{abbrev}y-@{size} {
+    @{prop-name}-top: @y;
+    @{prop-name}-bottom: @y;
+  }
+
+  .loop-sizes(@prop-name; @abbrev; @size-index - 1); /* call next iteration */
+}

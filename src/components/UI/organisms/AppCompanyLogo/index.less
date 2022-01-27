@@ -1,0 +1,30 @@
+@import '@Styles/variables/index.less';
+
+.app-company-logo {
+  height: 63px;
+  &-xs {
+    img {
+      width: 50px;
+    }
+  }
+  &-sm {
+    img {
+      width: 80px;
+    }
+  }
+  &-md {
+    img {
+      width: 180px;
+    }
+  }
+  &-link {
+    transition: opacity @animation-duration-base @ease-base-in;
+    &:hover {
+      opacity: 0.8;
+    }
+    &-image {
+      height: 63px !important;
+      object-fit: scale-down;
+    }
+  }
+}

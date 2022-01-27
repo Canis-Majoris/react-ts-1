@@ -1,0 +1,59 @@
+@import "@Styles/variables/index.less";
+
+.auth-layout-template {
+  height: 100vh;
+  &-content {
+    padding: 0 @padding-lg;
+    width: 100%;
+  }
+}
+
+// Small grid
+@media (min-width: @screen-sm-min) {
+  .auth-layout-template {
+    &-content {
+      padding: 0 @padding-lg;
+      width: 100%;
+    }
+  }
+}
+
+// Medium grid
+@media (min-width: @screen-md-min) {
+  .auth-layout-template {
+    &-content {
+      padding: 0 @padding-lg;
+      width: 50%;
+    }
+  }
+}
+
+// Large grid
+@media (min-width: @screen-lg-min) {
+  .auth-layout-template {
+    &-content {
+      padding: 0 @padding-lg * 2;
+      width: 25rem;
+    }
+  }
+}
+
+// Extra Large grid
+@media (min-width: @screen-xl-min) {
+  .auth-layout-template {
+    &-content {
+      padding: 0 @padding-lg * 2;
+      width: 25rem;
+    }
+  }
+}
+
+// Extra Extra Large grid
+@media (min-width: @screen-xxl-min) {
+  .auth-layout-template {
+    &-content {
+      padding: 0 @padding-lg * 2;
+      width: 32rem;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "@Styles/variables/index.less";
+
+.boxed-title-wrapper {
+    background-color: @card-background-light-3;
+    padding: @padding-sm @padding-lg;
+    .boxed-title {
+        color: @text-color;
+        font-weight: @font-weight-lg;
+        margin: 0;
+        &-extra {
+            font-size: @font-size-sm;
+            span {
+                color: @primary-color !important;
+            }
+        }
+    }
+    &.primary {
+        background-color: @surface-background-color;
+        .boxed-title {
+            color: @primary-color;
+            &-extra {
+                font-size: @font-size-sm;
+                span {
+                    color: @text-color-secondary !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+@import '@Styles/variables/index.less';
+
+@card-prefix-cls: ~'@{ant-prefix}-card';
+@typography-prefix-cls: ~'@{ant-prefix}-typography';
+
+.dashboard-investments-panel {
+  width: 100%;
+  .@{card-prefix-cls} {
+    // min-height: @dashboard-card-height-lg;
+    &-body {
+      padding-top: 0 !important;
+      min-height: 260px;
+    }
+  }
+
+  &-title {
+    & > div {
+      line-height: 0;
+    }
+    &-indicator {
+      font-size: 12px;
+      color: @text-color-secondary;
+    }
+  }
+
+  &-content {
+    &-image {
+    }
+    &-divider {
+      margin-top: @padding-md * 0.9;
+      margin-bottom: @padding-md * 0.9;
+    }
+    &-data {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &-title {
+        font-weight: @font-weight-lg !important;
+        margin-bottom: @padding-xs !important;
+      }
+      &-row {
+        line-height: @line-height-lg + 0.2;
+        -webkit-line-clamp: 1;
+      }
+      .content-data {
+        margin-bottom: @padding-md;
+        &-section {
+          position: relative;
+          &:first-child {
+            &::after {
+              content: '';
+              position: absolute;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              border-right: @border-width-base @border-style-base
+                @border-color-faint;
+
+              @media (max-width: @screen-sm-max) {
+                left: @padding-lg;
+                right: @padding-lg;
+                top: unset;
+                border-right: none;
+                border-bottom: @border-width-base @border-style-base
+                  @border-color-faint;
+              }
+            }
+          }
+        }
+        &-item {
+          .@{typography-prefix-cls} {
+            font-size: @font-size-sm;
+            color: @text-color-secondary-dark;
+            line-height: @line-height-lg;
+          }
+          &-value {
+            font-size: @font-size-sm;
+            color: @text-color !important;
+            font-weight: @font-weight-lg;
+          }
+        }
+      }
+    }
+  }
+  &-actions {
+    margin-top: auto;
+    &-navigation {
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}

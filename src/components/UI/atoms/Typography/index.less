@@ -1,0 +1,11 @@
+@import "@Styles/variables/index.less";
+
+@text-prefix-cls: ~"@{ant-prefix}-typography";
+
+.@{text-prefix-cls} {
+  &.text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

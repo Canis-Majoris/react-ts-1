@@ -1,0 +1,78 @@
+.font-weight (@font-size) when (@font-size >= @font-size-lg) {
+  font-weight: @font-weight-lg;
+}
+
+.font-weight (@font-size) when (@font-size <= @font-size-sm) {
+  font-weight: @font-weight-lg;
+}
+
+.font-weight
+  (@font-size)
+  when
+  (@font-size > @font-size-sm)
+  and
+  (@font-size < @font-size-sm) {
+  font-weight: @font-weight-lg;
+}
+
+.font {
+  &-weight {
+    &-light {
+      font-weight: @font-weight-sm !important;
+    }
+    &-medium {
+      font-weight: @font-weight-base !important;
+    }
+    &-bold {
+      font-weight: @font-weight-lg !important;
+    }
+    &-extra-bold {
+      font-weight: @font-weight-xl !important;
+    }
+  }
+
+  &-size {
+    &-lg {
+      font-size: @font-size-lg;
+    }
+    &-sm {
+      font-size: @font-size-sm;
+    }
+    &-xs {
+      font-size: @font-size-xs;
+    }
+  }
+}
+
+.line-height {
+  &-lg {
+    line-height: @font-size-lg;
+  }
+  &-sm {
+    line-height: @font-size-sm;
+  }
+  &-xs {
+    line-height: @font-size-xs;
+  }
+}
+
+.text {
+  &-transform {
+    &-uppercase {
+      text-transform: uppercase;
+    }
+
+    &-lowercase {
+      text-transform: lowercase;
+    }
+  }
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}

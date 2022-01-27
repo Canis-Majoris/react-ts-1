@@ -1,0 +1,16 @@
+@import '@Styles/variables/index.less';
+
+@tag-prefix-cls: ~'@{ant-prefix}-tag';
+
+.user-checkable-tag {
+  &.@{tag-prefix-cls} {
+    display: block;
+    margin: 0;
+    padding: @padding-xs @padding-sm;
+    border: none;
+
+    &:hover:not(.@{tag-prefix-cls}-checkable-checked) {
+        background-color: @primary-1;
+    }
+  }
+}

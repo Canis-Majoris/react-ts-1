@@ -1,0 +1,41 @@
+@import "@Styles/variables/index.less";
+
+@tag-prefix-cls: ~"@{ant-prefix}-tag";
+
+.@{tag-prefix-cls} {
+  display: inline-flex;
+  align-items: center;
+
+  &.tag {
+    &-sm {
+      padding: @padding-xs;
+      font-size: @font-size-sm;
+      line-height: @line-height-base * @font-size-sm / @font-size-base;
+    }
+    &-md {
+      padding: @padding-sm;
+      font-size: @font-size-base;
+      line-height: @line-height-base;
+    }
+    &-lg {
+      padding: @padding-md;
+      font-size: @font-size-lg;
+      line-height: @line-height-base * @font-size-lg / @font-size-base;
+    }
+
+    &-width {
+      &-full {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        align-items: center;
+      }
+    }
+
+    &-hoverable:not(.@{tag-prefix-cls}-checkable-checked) {
+      &:hover {
+        background-color: @primary-0;
+      }
+    }
+  }
+}

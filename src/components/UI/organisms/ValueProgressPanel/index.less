@@ -1,0 +1,66 @@
+@import '@Styles/variables/index.less';
+
+@progress-prefix-cls: ~'@{ant-prefix}-progress';
+
+.value-progress-panel {
+  padding: @padding-xss 0;
+  &-title {
+    display: block !important;
+    margin-bottom: @padding-xs * 0.25;
+    font-size: @font-size-sm;
+  }
+  &-value {
+    font-weight: @font-weight-lg !important;
+    margin-bottom: @padding-md - @padding-xs !important;
+    margin-top: 0 !important;
+  }
+  &-percent {
+    &.shade {
+      &-1 {
+        .@{progress-prefix-cls} {
+          &-bg {
+            background-color: mix(@primary-color, @secondary-color, 0%);
+          }
+        }
+      }
+      &-2 {
+        .@{progress-prefix-cls} {
+          &-bg {
+            background-color: mix(@primary-color, @secondary-color, 25%);
+          }
+        }
+      }
+      &-3 {
+        .@{progress-prefix-cls} {
+          &-bg {
+            background-color: mix(@primary-color, @secondary-color, 50%);
+          }
+        }
+      }
+      &-3 {
+        .@{progress-prefix-cls} {
+          &-bg {
+            background-color: mix(@primary-color, @secondary-color, 75%);
+          }
+        }
+      }
+      &-4 {
+        .@{progress-prefix-cls} {
+          &-bg {
+            background-color: mix(@primary-color, @secondary-color, 100%);
+          }
+        }
+      }
+    }
+    .ant-progress-text {
+      svg {
+        font-size: @font-size-lg;
+      }
+    }
+    .@{progress-prefix-cls} {
+      &-bg {
+        background-color: @primary-color;
+      }
+    }
+  }
+}

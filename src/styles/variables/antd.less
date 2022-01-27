@@ -1,0 +1,188 @@
+@import '~antd/lib/style/themes/default.less';
+
+@theme: default;
+
+// The prefix to use on all css classes from ant.
+@ant-prefix: ant;
+
+// An override for the html selector for theme prefixes
+@html-selector: html;
+@font-size-xl: 24px; // major text font size
+@font-size-lg: 16px; // major text font size
+@font-size-base: 14px; // major text font size
+@font-size-sm: 12px; // major text font size
+@font-size-xs: 10px; // major text font size
+@surface-background-color: #ffffff;
+@surface-background-color-shade: #f9fafb;
+@surface-background-color-secondary: #f3f3f6;
+
+@primary-color: #204079; // primary color for all components
+@secondary-color: #3f8cff; // primary color for all components
+@link-color: #204079; // link color
+@success-color: #52c41a; // success state color
+@warning-color: #faad14; // warning state color
+@error-color: #f5222d; // error state color
+@info-color: #0091ff;
+@highlight-color: @red-base;
+@heading-color: fade(@black, 85%); // heading text color
+@text-color: #262626; // major text color
+@text-color-secondary: #8c8c8c; // secondary text color
+@text-color-darkblue: #333D5D;
+@text-color-dark: #0c0c0c;
+@text-color-secondary-dark: #6d6d6d;
+@text-color-reverse: #ffffff; // major text color reverse
+@text-color-data-cell: #454f6f; //grid, filter menu, etc.
+@disabled-color: fade(@black, 25%); // disable state color
+@primary-light-color: #eff4fc;
+@secondary-light-color: #BFBFBF;
+@border-radius-base: 4px;
+@border-radius-sm: 2px;
+@border-radius-lg: 10px;
+@border-radius-circle: 50%;
+@border-color-base: #d9d9d9;
+@border-color-faint: #f0f0f0;
+@border-color-strong: #6d6d6d;
+@handle-color-base: #6d6d6d;
+@border-style-dashed: dashed;
+@component-background-accent: @surface-background-color-shade;
+@component-background: @surface-background-color;
+@box-shadow-base: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05); // major shadow for layers
+@box-shadow-xs:0px 2px 2px rgba(0, 0, 0, 0.1);
+@box-shadow-sm: 0px 2px 10px rgba(0, 0, 0, 0.1);
+@box-shadow-lg: 0px 9px 28px 8px rgba(0, 0, 0, 0.05),
+  0px 6px 16px rgba(0, 0, 0, 0.08), 0px 3px 6px -4px rgba(0, 0, 0, 0.12);
+// Button
+@btn-border-radius-base: 4px;
+@btn-border-radius-sm: 2px;
+@btn-primary-hover-bg: #0F2A5A;
+@btn-primary-ghost-hover-color:#fff;
+
+@primary-0: tint(@primary-color, 95%);
+@primary-1: tint(@primary-color, 90%); // replace tint(@primary-color, 90%)
+@primary-2: tint(@primary-color, 80%); // replace tint(@primary-color, 80%)
+@primary-5: tint(
+  @primary-color,
+  20%
+); // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
+@primary-6: @primary-color; // color used to control the text color of active buttons, don't use, use @primary-color
+@primary-7: tint(@primary-color, 5%); // replace shade(@primary-color, 5%)
+
+// Text
+@font-weight-base: 400;
+@font-weight-xl: 900;
+@font-weight-lg: 600;
+@font-weight-sm: 200;
+
+@line-height-base: 1.15;
+@line-height-lg: 1.5;
+@letter-spacing-sm: @letter-spacing-base - 0.01;
+@letter-spacing-base: 1px;
+@letter-spacing-md: @letter-spacing-base - 0.01;
+@letter-spacing-lg: @letter-spacing-base + 0.05;
+
+// Input
+@input-height-base: 32px;
+@amount-input-width: 250px;
+
+// Menu
+@menu-item-height: 32px;
+@menu-inline-toplevel-item-height: 32px;
+@menu-item-vertical-margin: 0;
+@menu-item-boundary-margin: 0;
+
+// Dropdown
+@dropdown-edge-child-vertical-padding: 0;
+@dropdown-vertical-padding: 7px;
+
+// Typography
+@typography-title-font-weight: @font-weight-sm;
+@heading-1-size: ceil(@font-size-base * 2.57);
+@heading-2-size: ceil(@font-size-base * 2.14);
+@heading-3-size: ceil(14px * 1.71);
+@heading-4-size: ceil(14px * 1.42);
+@heading-5-size: ceil(14px * 1.14);
+
+// height rules
+
+@height-base: 32px;
+// @height-lg: 50px;
+// @height-sm: 24px;
+
+// Buttons
+@btn-padding-horizontal-base: @padding-sm - 1px;
+@btn-padding-horizontal-lg: @padding-md - 1px;
+@btn-padding-horizontal-sm: @padding-xs - 1px;
+@btn-font-weight-base: @font-weight-base;
+@btn-font-weight-lg: @font-weight-lg;
+@btn-font-weight-sm: @font-weight-lg;
+
+//Select
+@select-height-md: 35px;
+@select-width-md: 200px;
+
+// Modal
+@modal-header-bg: @primary-color;
+@modal-heading-color: @white;
+@modal-header-color-2: #F5F5F5;
+@modal-header-height: 60px;
+@modal-close-color: @white;
+
+// Layout
+@layout-body-background: @surface-background-color-shade;
+@layout-header-padding: 0 @padding-lg;
+@layout-content-padding: @padding-lg @padding-lg * 5;
+@layout-footer-padding: @padding-lg;
+@layout-app-template-width-base: 1200px;
+
+// Table
+@table-font-size: @font-size-base - 1;
+
+// Card
+@card-head-font-size: @font-size-xl;
+@card-head-font-size-sm: @font-size-lg;
+@card-padding-base: 24px;
+@card-padding-base-sm: 24px;
+@card-head-padding: 20px;
+@card-head-padding-sm: 20px;
+@card-background-light-2: #E5E5E5; 
+@card-background-light-3: #FAFAFA;
+@card-border-light-2: #E5E5E5; 
+@sign-document-card-height: 900px;
+@card-border-color-active: #40A9FF;
+@card-background-color-active: #E6F7FF;
+
+//Pagination
+@pagination-item-size: @height-sm;
+
+//Infolist
+@info-list-padding-sm: (@padding-sm - 4) 0;
+@info-list-padding-lg: (@padding-md - 2) 0;
+
+//Font
+@font-family: Inter, sans-serif !important;
+
+//Header
+@layout-header-background: @surface-background-color;
+
+// Progress
+@progress-text-color: @text-color-secondary;
+
+//Dashboard
+@dashboard-card-height-lg: 280px;
+@dashboard-card-height-sm: @dashboard-card-height-lg * 0.5 - @padding-lg * 0.5;
+
+//Collapse
+@collapse-header-height-lg: 78px;
+//MyInvestments
+@myinvestments-card-height: 376px;
+@myinvestments-card-background-image-height: @myinvestments-card-height * 0.58;
+
+//Offerings
+@offerings-card-height-sm: 404px;
+@offerings-card-height-lg: 330px;
+@offerings-card-background-image-height: @offerings-card-height-sm * 0.45;
+
+//Subscription
+
+@map-height: 360px;

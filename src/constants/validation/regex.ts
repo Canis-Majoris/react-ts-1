@@ -1,0 +1,1 @@
+export const atLeastOneNumber = /.*[0-9].*/;

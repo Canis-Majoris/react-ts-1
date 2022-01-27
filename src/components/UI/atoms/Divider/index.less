@@ -1,0 +1,13 @@
+@import '@Styles/variables/index.less';
+
+@divider-prefix-cls: ~'@{ant-prefix}-divider';
+
+.@{divider-prefix-cls} {
+  &.divider-dark {
+    border-color: fade(@divider-color, 20%);
+  }
+  &.divider-strong {
+    border-width: @border-width-base * 2;
+    border-color: darken(@component-background-accent, 5%);
+  }
+}

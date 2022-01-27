@@ -1,0 +1,17 @@
+@import '@Styles/variables/index.less';
+
+@card-prefix-cls: ~'@{ant-prefix}-card';
+
+.dashboard-allocation-panel {
+  width: 100%;
+  .@{card-prefix-cls} {
+    display: flex;
+    flex-direction: column;
+    min-height: @dashboard-card-height-lg;
+    &-body {
+      flex: 1;
+      height: 100%;
+      padding-top: @padding-sm !important;
+    }
+  }
+}

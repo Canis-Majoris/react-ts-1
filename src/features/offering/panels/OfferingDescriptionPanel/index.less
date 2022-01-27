@@ -1,0 +1,24 @@
+@import '@Styles/variables/index.less';
+
+@image-prefix-cls: ~'@{ant-prefix}-image';
+
+.offering-description-panel {
+  &-title {
+    font-weight: @font-weight-base !important;
+    margin-right: @padding-md;
+    margin-bottom: 0 !important;
+  }
+  &-tag {
+    border-radius: @border-radius-lg !important;
+  }
+  &-description {
+    font-weight: @font-weight-base !important;
+    font-weight: @font-size-base;
+    -webkit-line-clamp: 5 !important;
+    word-break: break-word;
+  }
+  &-more-button {
+    margin-top: @padding-md !important;
+    padding: 0 !important;
+  }
+}

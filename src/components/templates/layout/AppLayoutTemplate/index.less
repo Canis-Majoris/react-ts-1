@@ -1,0 +1,23 @@
+@import '@Styles/variables/index.less';
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+.app-layout-template {
+  min-height: 100vh !important;
+  position: relative;
+  background-color: @surface-background-color-secondary !important;
+
+  &-content {
+    max-width: @layout-app-template-width-base;
+    margin: 0 auto;
+    padding: @padding-lg @padding-md;
+    position: relative;
+    width: 100%;
+    display: flex;
+  }
+
+  @media (min-width: @screen-xxl-min) {
+    &-content {
+      max-width: @layout-app-template-width-base * 1.25;
+    }
+  }
+}

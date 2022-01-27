@@ -1,0 +1,17 @@
+@import "@Styles/variables/index.less";
+
+.dashboard-page-template {
+  &-info {
+    position: sticky;
+    top: @layout-header-height + @padding-lg;
+  }
+}
+
+@media (max-width: @screen-sm-max) {
+  .dashboard-page-template {
+    &-grid-stats {
+      width: 100%;
+      margin: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import "@Styles/variables/index.less";
+
+@space-prefix-cls: ~"@{ant-prefix}-space";
+
+.offering-header {
+  &-title {
+    margin-bottom: 0 !important;
+    font-weight: @font-weight-lg !important;
+  }
+  &-closed-button {
+    color: @text-color-secondary;
+    font-weight: @font-weight-lg;
+  }
+  &-searchbar {
+    svg {
+      color: @text-color;
+    }
+  }
+  @media (max-width: @screen-md-max) {
+    &-space-captions > .@{space-prefix-cls}-item {
+      width: 100%;
+    }
+  }
+}

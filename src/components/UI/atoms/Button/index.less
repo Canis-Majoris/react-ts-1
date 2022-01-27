@@ -1,0 +1,31 @@
+@import '@Styles/variables/index.less';
+
+@btn-prefix-cls: ~'@{ant-prefix}-btn';
+
+*[class='@{btn-prefix-cls}'] {
+  border-color: @primary-3;
+  color: @primary-color;
+}
+
+.@{btn-prefix-cls} {
+  // &-text {
+  //   &.color-primary {
+  //     color: @primary-color;
+  //     // &:hover,
+  //     // &:focus,
+  //     // &:active {
+  //     //   color: @primary-color;
+  //     // }
+  //   }
+  // }
+  & > .ant-image {
+    & + span {
+      margin-left: 8px;
+    }
+  }
+}
+
+// Mixins
+.button-size(@height; @padding-horizontal; @font-size; @border-radius;) {
+  .font-weight(@font-size);
+}

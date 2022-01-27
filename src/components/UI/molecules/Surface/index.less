@@ -1,0 +1,20 @@
+@import '@Styles/variables/index.less';
+
+.surface {
+  border-radius: @border-radius-base;
+  position: relative;
+  &-level {
+    &-0 {
+      box-shadow: none;
+    }
+    &-1 {
+      box-shadow: @box-shadow-sm;
+    }
+    &-2 {
+      box-shadow: @box-shadow-base;
+    }
+    &-3 {
+      box-shadow: @box-shadow-lg;
+    }
+  }
+}

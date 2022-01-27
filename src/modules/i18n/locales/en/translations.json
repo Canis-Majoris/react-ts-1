@@ -1,0 +1,21 @@
+{
+  "app.header.menu.dashboard": "Dashboard",
+  "app.header.menu.investments": "My Investments",
+  "app.header.menu.documents": "Documents",
+  "app.header.menu.offerings": "Offerings",
+  "app.footer.powered.text": "Powered by Agora",
+  "app.footer.copyright.subtitle": "Need Help? Contact us at {{-email}} or {{-phone}}",
+  "app.shared.live-offerings": "Live Offerings",
+  "app.shared.recent-updates": "Recent Updates",
+  "app.dashboard.charts.portfolio-summary.label.total": "Investments",
+  "conjunction_and": "and ",
+  "max": "Max",
+  "min": "Min",
+  "no_data": "No Data",
+  "continue": "Continue",
+  "yes": "YES",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "save": "Save",
+  "select": "Select"
+}

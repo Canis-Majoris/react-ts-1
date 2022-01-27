@@ -1,0 +1,92 @@
+@color-props: color color, background-color background, border-color border;
+@color-names: @preset-colors;
+@color-type-names: primary;
+@color-levels: 1, 2, 3, 4, 5, 6, 7, 8, 9;
+
+.loop-props(@prop-index) when (@prop-index > 0) {
+  /* outer each loop */
+
+  @prop: extract(@color-props, @prop-index);
+
+  @prop-name: extract(@prop, 1);
+  @abbrev: extract(@prop, 2);
+
+  .loop-names(@abbrev; @prop-name; length(@color-names));
+  .loop-type-names(@abbrev; @prop-name; length(@color-type-names));
+  .loop-props(@prop-index - 1);
+}
+
+// .loop-props(length(@color-props));
+
+.loop-names(@abbrev; @prop-name; @names-index) when (@names-index > 0) {
+  @name: extract(@color-names, @names-index);
+
+  @varname: '@{name}-base';
+
+  .@{abbrev}-@{name} {
+    @{prop-name}: @@varname !important;
+  }
+
+  .@{abbrev}-inner-@{name} > * {
+    @{prop-name}: @@varname !important;
+  }
+
+  .loop-levels(@abbrev; @prop-name; @name; length(@color-levels));
+
+  .loop-names(@abbrev; @prop-name; @names-index - 1);
+}
+
+.loop-type-names(@abbrev; @prop-name; @names-index) when (@names-index > 0) {
+  @name: extract(@color-type-names, @names-index);
+
+  @varname: '@{name}-color';
+
+  .@{abbrev}-@{name} {
+    @{prop-name}: @@varname !important;
+  }
+
+  .@{abbrev}-inner-@{name} > * {
+    @{prop-name}: @@varname !important;
+  }
+
+  .loop-levels(@abbrev; @prop-name; @name; length(@color-levels));
+
+  .loop-names(@abbrev; @prop-name; @names-index - 1);
+}
+
+.loop-levels(@abbrev; @prop-name; @name; @level-index) when (@level-index > 0) {
+  @level: extract(@color-levels, @level-index);
+
+  @varname: '@{name}-@{level}';
+
+  .@{abbrev}-@{name}-@{level} {
+    @{prop-name}: @@varname !important;
+  }
+
+  .@{abbrev}-inner-@{name}-@{level} > * {
+    @{prop-name}: @@varname !important;
+  }
+
+  .loop-levels(@abbrev; @prop-name; @name; @level-index - 1);
+}
+
+.background {
+  background-color: @component-background;
+  &-bright {
+    background-color: @white !important;
+  }
+
+  &-dark {
+    background-color: @black !important;
+  }
+}
+
+.color {
+  &-bright {
+    color: @white !important;
+  }
+
+  &-dark {
+    color: @black !important;
+  }
+}

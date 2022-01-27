@@ -1,0 +1,27 @@
+@import "@Styles/variables/index.less";
+
+@space-prefix-cls: ~"@{ant-prefix}-space";
+@input-prefix-cls: ~"@{ant-prefix}-input";
+@button-prefix-cls: ~"@{ant-prefix}-btn";
+
+.searchbar {
+  svg {
+    color: @text-color;
+  }
+  &.primary {
+    .@{button-prefix-cls} {
+      background-color: @primary-color;
+      svg {
+        color: white;
+      }
+    }
+  }
+  @media (max-width: @screen-sm-max) {
+    .@{input-prefix-cls} {
+      width: 2px !important;
+    }
+    .@{button-prefix-cls} {
+      border-radius: @border-radius-base !important;
+    }
+  }
+}
